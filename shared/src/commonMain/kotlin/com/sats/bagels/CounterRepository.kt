@@ -1,18 +1,15 @@
 package com.sats.bagels
 
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 
-class CounterRepository {
-  private val counterValue = MutableStateFlow(0)
-
-  fun getCounterValue(): Flow<Int> = counterValue
+class CounterRepository(private val apiService: CounterApiService) {
+  fun getCounterValue(): Flow<Int> = apiService.getCounterValue()
 
   fun incrementCounter() {
-    counterValue.value++
+    apiService.incrementCounter()
   }
 
   fun decrementCounter() {
-    counterValue.value--
+    apiService.decrementCounter()
   }
 }

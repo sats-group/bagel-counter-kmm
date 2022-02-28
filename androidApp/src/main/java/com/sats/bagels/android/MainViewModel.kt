@@ -6,11 +6,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.sats.bagels.CounterApiService
 import com.sats.bagels.CounterRepository
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
-  private val repository = CounterRepository()
+  private val repository = CounterRepository(CounterApiService())
 
   var counterValue: Int by mutableStateOf(0)
     private set

@@ -21,7 +21,11 @@ kotlin {
     }
     val commonTest by getting
 
-    val androidMain by getting
+    val androidMain by getting {
+      dependencies {
+        implementation("com.microsoft.signalr:signalr:6.0.1")
+      }
+    }
     val androidTest by getting
 
     val iosX64Main by getting
