@@ -1,17 +1,8 @@
 import SwiftUI
 import shared
-import AVFoundation
 
 struct ContentView: View {
     @ObservedObject var viewModel = CounterViewModel()
-    
-    private var bagelInPlayer: AVAudioPlayer?
-    private var bagelOutPlayer: AVAudioPlayer?
-    
-    init() {
-        bagelInPlayer = setupAudioPlayer(with: "BagelIn")
-        bagelOutPlayer = setupAudioPlayer(with: "BagelOut")
-    }
     
     var body: some View {
         ZStack {
@@ -24,7 +15,12 @@ struct ContentView: View {
                 Spacer()
                     .frame(height: 56)
                 HStack(alignment: .center, spacing: 0) {
-                    Text("\(viewModel.counterValue)")
+                    let counterText = if let counterValue = viewModel.counterValue {
+                        "\(counterValue)"
+                    } else {
+                        "   "
+                    }
+                    Text(counterText)
                         .foregroundColor(.white).padding(.top, 24)
                         .font(.system(size: 57).bold())
                     Spacer()
@@ -37,7 +33,6 @@ struct ContentView: View {
                     Button(
                         action: {
                             viewModel.decrementCounter()
-                            bagelOutPlayer?.play()
                         }
                     ) {
                         Image("ArrowDown")
@@ -54,7 +49,6 @@ struct ContentView: View {
                     Button(
                         action: {
                             viewModel.incrementCounter()
-                            bagelInPlayer?.play()
                         }
                     ) {
                         Image("ArrowUp")
@@ -69,14 +63,6 @@ struct ContentView: View {
                 }.frame(height: 125)
             }
         }
-    }
-    
-    private func setupAudioPlayer(with resourceName: String) -> AVAudioPlayer? {
-        guard let url = Bundle.main.url(forResource: resourceName, withExtension: "wav") else {
-            print("Error: Unable to find \(resourceName).wav")
-            return nil
-        }
-        return try? AVAudioPlayer(contentsOf: url)
     }
 }
 

@@ -2,17 +2,20 @@ import Foundation
 import SignalRClient
 
 class CounterViewModel: ObservableObject {
-    @MainActor @Published var counterValue = 0
+    @MainActor @Published var counterValue: Int? = nil
     
     @MainActor var isDecrementEnabled: Bool {
-        counterValue > 0
+        guard let counterValue = counterValue else { return false }
+        return counterValue > 0
     }
     
     @MainActor var isIncrementEnabled: Bool {
-        counterValue < 8
+        guard let counterValue = counterValue else { return false }
+        return counterValue < 8
     }
 
     private var hubConnection: HubConnection
+    private var soundEffectPlayer = SoundEffectPlayer()
 
     init() {
         self.hubConnection = HubConnectionBuilder(
@@ -25,6 +28,13 @@ class CounterViewModel: ObservableObject {
             method: "UpdatedBagelCount",
             callback: { (newValue: Int) in
                 DispatchQueue.main.async {
+                    if let currentValue = self.counterValue {
+                        if newValue > currentValue {
+                            self.soundEffectPlayer.bagelIn()
+                        } else if newValue < currentValue {
+                            self.soundEffectPlayer.bagelOut()
+                        }
+                    }
                     self.counterValue = newValue
                 }
             }

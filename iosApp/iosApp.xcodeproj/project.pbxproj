@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
+		171BA76A2B4D970000C41471 /* SoundEffectPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171BA7692B4D970000C41471 /* SoundEffectPlayer.swift */; };
 		171E2AD32B4D6BEF00A56F26 /* SignalRClient in Frameworks */ = {isa = PBXBuildFile; productRef = 171E2AD22B4D6BEF00A56F26 /* SignalRClient */; };
 		171E2AD52B4D6C0F00A56F26 /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E2AD42B4D6C0F00A56F26 /* CounterViewModel.swift */; };
 		171E2ADB2B4D89BC00A56F26 /* BagelIn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 171E2ADA2B4D89BC00A56F26 /* BagelIn.wav */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		171BA7692B4D970000C41471 /* SoundEffectPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectPlayer.swift; sourceTree = "<group>"; };
 		171E2AD42B4D6C0F00A56F26 /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		171E2ADA2B4D89BC00A56F26 /* BagelIn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BagelIn.wav; sourceTree = "<group>"; };
 		171E2ADC2B4D89C300A56F26 /* BagelOut.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BagelOut.wav; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				7555FF8C242A565B00829871 /* Info.plist */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				171E2AD42B4D6C0F00A56F26 /* CounterViewModel.swift */,
+				171BA7692B4D970000C41471 /* SoundEffectPlayer.swift */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				171E2ADA2B4D89BC00A56F26 /* BagelIn.wav */,
 				171E2ADC2B4D89C300A56F26 /* BagelOut.wav */,
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				171BA76A2B4D970000C41471 /* SoundEffectPlayer.swift in Sources */,
 				171E2AD52B4D6C0F00A56F26 /* CounterViewModel.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
