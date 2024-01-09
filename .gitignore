@@ -1,8 +1,14 @@
-*.iml
 .gradle
-.idea/*
 build/
 captures/
 local.properties
 
+# IntelliJ stuff
 !/.idea/codeStyles/
+*.iml
+.idea/*
+
+# Xcode stuff
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
