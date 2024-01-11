@@ -62,7 +62,7 @@ struct ContentView: View {
                     .disabled(!viewModel.isIncrementEnabled)
                 }.frame(height: 125)
             }
-        }
+        }.onAppear(perform: { viewModel.connect() })
     }
 }
 

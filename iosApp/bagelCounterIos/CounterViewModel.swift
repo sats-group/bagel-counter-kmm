@@ -39,8 +39,6 @@ class CounterViewModel: ObservableObject {
                 }
             }
         )
-
-        self.hubConnection.start()
     }
 
     func incrementCounter() {
@@ -63,5 +61,9 @@ class CounterViewModel: ObservableObject {
                 print(error)
             }
         )
+    }
+    
+    func connect() {
+        self.hubConnection.start()
     }
 }
