@@ -6,6 +6,7 @@
     android:fullBackupOnly="true"
     android:icon="@drawable/bagel"
     android:supportsRtl="true"
+    android:label="Bagels"
     android:theme="@style/AppTheme">
     <activity
       android:name=".MainActivity"
