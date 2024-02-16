@@ -4,7 +4,7 @@
 
   <application
     android:fullBackupOnly="true"
-    android:icon="@drawable/bagel"
+    android:icon="@mipmap/ic_launcher"
     android:supportsRtl="true"
     android:label="Bagels"
     android:theme="@style/AppTheme">
